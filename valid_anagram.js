@@ -21,6 +21,16 @@ function validAnagram(str1, str2){
     }
     console.log(strObj1)
     console.log(strObj2)
+
+    for (let key in strObj1){
+        if (!(key in strObj2)){
+            return false
+        }
+        if (strObj1[key] !== strObj2[key]){
+            return false
+        }
+    }
+    return true
 }
 
 validAnagram("rat", "car")
