@@ -4,7 +4,24 @@
 // ex. anagram("anagram", "nagaram") = true
 // ex. anagram("rat", "car") = false
 
-function validAnagram(){
-    // create objects for each string
-    // compare the objects
+function validAnagram(str1, str2){
+    if (str1.length !== str2.length){
+        return false
+    }
+
+    let strObj1 = {}
+    let strObj2 = {}
+
+    for (let val of str1){
+        strObj1[val] = (strObj1[val] || 0) + 1
+    }
+
+    for (let val of str2){
+        strObj2[val] = (strObj2[val] || 0) + 1
+    }
+    console.log(strObj1)
+    console.log(strObj2)
 }
+
+validAnagram("rat", "car")
+validAnagram("anagram", "nagaram")
