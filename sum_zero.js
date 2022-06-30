@@ -22,3 +22,24 @@ sumZero([-3, -2, -1, 0, 1, 2, 3])
 
 // Refactor:
 // need to get rid of nested loop
+// we want to compare the first and last numbers to help reduce the time complexity of this
+// if the first and last number are a positive number, then the second pointer will move down the array
+// if the second pointer is then a negative number, then we want to move the first pointer
+
+function sumZero(arr){
+    let left = 0
+    let right = arr.length - 1
+    while (left < right){
+        let sum = arr[left] + arr[right]
+        if (sum === 0){
+            return [arr[left], arr[right]]
+        } else if (sum > 0){
+            right--
+        } else {
+            left++
+        }
+    }
+}
+
+// Time Complexity: 0(n)
+// Space Complexity: 0(1)
