@@ -14,5 +14,24 @@
 // countUniqueValues([1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13]) = 7
 // countUniqueValues([-2, -1, -1, 0, 1]) = 4
 
+function countUniqueValues(arr){
+    let firstPointer = arr[0]
+    let secondPointer = arr[1]
+    console.log("first:", firstPointer)
+    if (firstPointer === secondPointer){
+        secondPointer++
+        console.log("second:", secondPointer)
+    } else if (firstPointer !== secondPointer){
+        firstPointer = secondPointer
+        firstPointer++
+        secondPointer++
+        console.log("else first:", firstPointer)
+        console.log("else second:", secondPointer)
+        console.log(arr)
+    } else {
+        return 0
+    }
+}
 
+countUniqueValues([-2, -1, -1, 0, 1])
 
