@@ -15,23 +15,21 @@
 // countUniqueValues([-2, -1, -1, 0, 1]) = 4
 
 function countUniqueValues(arr){
-    let firstPointer = arr[0]
-    let secondPointer = arr[1]
-    console.log("first:", firstPointer)
-    if (firstPointer === secondPointer){
-        secondPointer++
-        console.log("second:", secondPointer)
-    } else if (firstPointer !== secondPointer){
-        firstPointer = secondPointer
-        firstPointer++
-        secondPointer++
-        console.log("else first:", firstPointer)
-        console.log("else second:", secondPointer)
-        console.log(arr)
-    } else {
-        return 0
+    if (arr.length === 0) return 0
+    let firstPointer = 0
+
+    for (let secondPointer = 1; secondPointer < arr.length; secondPointer++){
+        if (arr[firstPointer] !== arr[secondPointer]){
+            firstPointer++
+            arr[firstPointer] = arr[secondPointer]
+        } 
     }
+    return firstPointer + 1
+    
 }
 
 countUniqueValues([-2, -1, -1, 0, 1])
+
+// Time Complexity: O(n)
+// Space Complexity: O(n)
 
