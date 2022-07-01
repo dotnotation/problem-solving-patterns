@@ -29,14 +29,19 @@ sumZero([-3, -2, -1, 0, 1, 2, 3])
 function sumZero(arr){
     let left = 0
     let right = arr.length - 1
+    // getting the last element in the array
     while (left < right){
+        // this has to be less than as a failsafe and can not be less than or equal to
+        // say for instance if zero was the middle number you could get a false positive
         let sum = arr[left] + arr[right]
         if (sum === 0){
             return [arr[left], arr[right]]
         } else if (sum > 0){
             right--
+            // if the sum is greater than zero, then we want to check the next right element which would be a lower index than the previous value
         } else {
             left++
+            // if the sum is less than zero, then we know that we need to move the left index
         }
     }
 }
