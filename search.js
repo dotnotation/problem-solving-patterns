@@ -26,8 +26,10 @@ function search(arr, val){
     while (min <= max) {
         let middle = Math.floor((min + max) / 2)
         let currentElement = arr[middle]
-
-        if (array[middle] < val) {
+        // this loop allows us to divide the array in half and check if the value is in the first or second half of the array 
+        // then you continue chopping the array in half 
+        // this way you are checking less values and dividing and conquering 
+        if (arr[middle] < val) {
             min = middle + 1
         } else if (arr[middle] > val){
             max = middle - 1
@@ -38,3 +40,5 @@ function search(arr, val){
 
     return -1
 }
+
+// Time: Log(N)
