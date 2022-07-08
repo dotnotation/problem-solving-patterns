@@ -17,13 +17,25 @@ function maxSubarraySum(arr, num){
     var max = -Infinity
 
     for (let i = 0; i < arr.length - num + 1; i++){
+        // arr.length - num + 1 because we don't want to get all the way to the end of the array
+        // we just want to get to the last possible number in the array that we can start counting at
+        // for instance if the number was 3 we would want to stop at the third to last number
+        // [2, 6, 9, 8, 2, 1, 7, 8*, 9, 1], 3 
+        // the asterisk indicates the last number we would want to start our check at
         temp = 0
+        // temp will store our sum so we can compare it to the max
         for (let j = 0; j < num; j++){
+            // this is checking only the num amount of elements next to our i element in the array
             temp += arr[i + j]
         }
         if (temp > max){
             max = temp
+            // if the temp sum is greater than max, then we reassign max to be the sum 
         }
     }
     return max
 }
+
+// this isn't an efficient way especially for large arrays or large num
+// O(n^2)
+
