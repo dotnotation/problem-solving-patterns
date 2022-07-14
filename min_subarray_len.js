@@ -12,22 +12,22 @@
 // minSubArrayLen([1, 4, 16, 22, 5, 7, 8, 9, 10], 95) = 0
 // * denotes which subarray is used
 
-function minSubArrayLen(arr, total) {
+function minSubArrayLen(arr, sum) {
     let total = 0;
     let start = 0;
     let end = 0;
     let minLen = Infinity;
    
     while (start < arr.length) {
-      // if current window doesn't add up to the given total then 
+      // if current window doesn't add up to the given sum then 
           // move the window to right
-      if(total < total && end < arr.length){
+      if(total < sum && end < arr.length){
         total += arr[end];
               end++;
       }
-      // if current window adds up to at least the total given then
+      // if current window adds up to at least the sum given then
           // we can shrink the window 
-      else if(total >= total){
+      else if(total >= sum){
         minLen = Math.min(minLen, end-start);
               total -= arr[start];
               start++;
