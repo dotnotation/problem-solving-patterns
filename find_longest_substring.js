@@ -12,6 +12,14 @@
 // findLongestSubstring('thecat*intheha*t') = 7
 // * denotes the break in the distinct characters
 
+
+// need two counters
+// one for temporary storage of the substring
+// one that is the longest substring
+// compare the string and reassign value of longest if the length of the substring is longer than the temp storage number
+// since we can't repeat characters, store in an object
+// it the key already exists, then that is the number to store in the temp
+
 function findLongestSubstring(str){
     let longest = 0;
     let seen = {};
