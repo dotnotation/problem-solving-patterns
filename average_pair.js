@@ -5,6 +5,7 @@
 // can take in negative numbers
 // returns true or false
 // need to account for an empty array
+// use multiple pointers
 // Time: O(n) Space: O(1)
 // ex. averagePair([1, 2, 3], 2.5) = true
 // averagePair([1, 3, 3, 5, 6, 7, 10, 12, 19], 8)
@@ -12,5 +13,25 @@
 // averagePair([], 4) = false
 
 function averagePair(arr, target){
+    console.log(arr.length, target)
+    if (arr.length === 0){
+        return false
+    }
+
+    
+    for (let i = 0; i < arr.length; i++){
+        let temp = 0
+
+        for (let j = 0; j < arr.length; j++){
+            temp += (arr[i + j] / 2)
+            console.log("temp", temp)
+            if (temp === target){
+                return true
+            }
+        }
+    }
+
+    return false
     
 }
+
