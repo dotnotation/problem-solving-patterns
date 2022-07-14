@@ -1,3 +1,5 @@
+// Frequency Counter
+
 // Write a function called same
 // accepts two arrays
 // should return true if every value in the array has a value that is the squared of that value in the second array

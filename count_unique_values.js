@@ -1,3 +1,5 @@
+// Multiple Pointers
+
 // write a function called countUniqueValues
 // takes in a sorted array
 // the function counts the unique values in the array

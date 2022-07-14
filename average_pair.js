@@ -1,3 +1,5 @@
+// Multiple Pointers
+
 // function called averagePair
 // takes in a sorted array of integers and a target average
 // see if there is a pair of values where it equals the target average

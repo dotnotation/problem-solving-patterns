@@ -1,3 +1,5 @@
+// Frequency Counter
+
 // takes in two positive integers
 // find if the two integers have the same frequency of digits
 // must be O(n)

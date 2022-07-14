@@ -1,3 +1,5 @@
+// Multiple Pointers
+
 // takes in two strings
 // check to see if the characters in the first string form a subsequence of the second string
 // see if the characters in the first string appear anywhere in the second string in the same order

@@ -1,3 +1,5 @@
+// Frequency Counter/ Multiple Pointers
+
 // function called areThereDuplicates
 // accepts a variable number of arguments
 // check to see if there are duplicates in the arguments
