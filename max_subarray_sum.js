@@ -72,3 +72,32 @@ function maxSubarraySum(arr, num) {
 }
 
 // Time: O(n)
+
+// Other solution
+function maxSubarraySum(arr, num) {
+    let maxSum = 0
+    let tempSum = 0
+
+    if (arr.length < num) return null
+
+    for (let i = 0; i < num; i++){
+        maxSum += arr[i]
+        // storing our initial num amount of elements
+    }
+
+    tempSum = maxSum
+    // setting initial sum to our maxSum so it can be compared in the next loop
+
+    for (let i = num; i < arr.length; i++){
+        tempSum = tempSum - arr[i - num] + arr[i]
+        // we are taking our first sum and subtracting the first element and then adding the element that would be next to check
+        // so instead of adding a new set of three numbers, we are just switching one element
+        // ex. [2, 6, 9, 4, 1, 8], 3
+            // we would first store 2 + 6 + 9
+            // then with the next loop, we would subtract the first element(2) and then add the next element(4)
+            // with a large num, this saves a lot of time instead of adding together 20 elements, you would just be doing two operators
+        maxSum = Math.max(maxSum, tempSum)
+    }
+
+    return maxSum
+}
