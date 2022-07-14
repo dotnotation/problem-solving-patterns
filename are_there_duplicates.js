@@ -9,6 +9,19 @@
 // needs to be Time: O(n) Space: O(n)
 // Bonus: Time: O(n log n) Space: O(1)
 
-function areThereDuplicates(arg){
+function areThereDuplicates(){
+    let argObj = {}
     
+    for (let val in arguments){
+        argObj[arguments[val]] = (argObj[arguments[val]] || 0) + 1
+    }
+
+    console.log("Obj", argObj)
+
+    for (let key in argObj){
+        if (argObj[key] > 1){
+            return true
+        }
+    }
+    return false
 }
