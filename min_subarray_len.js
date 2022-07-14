@@ -13,5 +13,16 @@
 // * denotes which subarray is used
 
 function minSubArrayLen(arr, num){
+    let total = 0
+    let subArray = []
+
+    for (let i = 0; i < num; i++){
+        total += arr[i]
+        if (total <= num){
+            subArray.push(i)
+        }
+    }
+
+    return subArray.length
 
 }
